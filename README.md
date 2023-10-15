@@ -1,1 +1,1 @@
-# 00-Libft
+# Libft, First project of the 42cursus!
