@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/15 21:42:09 by jtollena          #+#    #+#             */
+/*   Updated: 2023/10/15 21:42:10 by jtollena         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	const unsigned char	*srccpy;
+	unsigned char		*copy;
+	int					i;
+
+	copy = dst;
+	srccpy = src;
+	if (dst > src)
+	{
+		while (len > 0)
+		{
+			copy[len - 1] = srccpy[len - 1];
+			len--;
+		}
+	}
+	else
+	{
+		while (i < (int)len - 1)
+		{
+			copy[i] = srccpy[i];
+			i++;
+		}
+	}
+	return (dst);
+}
+
+// #include <stdio.h>
+// int	main(int argc, char *argv[])
+// {
+// 	printf("%s", ft_memmove(argv[1], argv[2], 4));
+// 	return (argc);
+// }
