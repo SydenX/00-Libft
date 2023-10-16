@@ -2,12 +2,9 @@
 
 [![Worked at least](https://wakatime.com/badge/github/SydenX/SydenX.svg)](https://wakatime.com/badge/github/SydenX/SydenX)
 
-<<<<<<< HEAD
-
 Description from (https://github.com/eliarisalvares)
 =======
 Function descriptions from (https://github.com/eliarisalvares/libft_42sp/blob/master/)
->>>>>>> 99f3c1d924189a2d5392bf29b60799a96ce171fe
 | function | description |
 |--|--|
 |ft_isascii|tests if a given character, in the current locale, can be represented as a valid 7–bit US-ASCII character.        
@@ -50,8 +47,5 @@ ft_substr | allocates (with malloc) and returns a substring from the string _s_.
 |ft_putchar_fd| outputs the character _c_ to the given file descriptor.
 |ft_putstr_fd| outputs the string _s_ to the given file descriptor.
 |ft_putendl_fd| outputs the string _s_ to the given file descriptor, followed by a newline.
-<<<<<<< HEAD
 |ft_putnbr_fd| outputs the integer _n_ to the given file descriptor.
-=======
 |ft_putnbr_fd| outputs the integer _n_ to the given file descriptor.
->>>>>>> 99f3c1d924189a2d5392bf29b60799a96ce171fe
