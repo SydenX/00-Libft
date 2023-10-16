@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 21:41:45 by jtollena          #+#    #+#             */
-/*   Updated: 2023/10/15 21:41:47 by jtollena         ###   ########.fr       */
+/*   Created: 2023/10/16 14:02:59 by jtollena          #+#    #+#             */
+/*   Updated: 2023/10/16 14:03:16 by jtollena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lstadd_back(t_list **list, t_list *new)
 {
-	int				i;
-	unsigned char	*copy;
+	t_list	*cpy;
 
-	i = 0;
-	copy = (unsigned char *) s;
-	while (i < (int)n)
+	if (*list == NULL)
 	{
-		if (copy[i] == (unsigned char)c)
-			return (&((void *)copy)[i]);
-		i++;
+		*list = new;
+		return ;
 	}
-	return (NULL);
+	cpy = *list;
+	while (cpy->next)
+	{
+		cpy = cpy->next;
+	}
+	cpy->next = new;
 }
-
-// #include <stdio.h>
-// int	main(int argc, char *argv[])
-// {
-// 	printf("%s", (char *)ft_memchr((const void *)argv[1],argv[2][0],5));
-// 	return (argc);
-// }

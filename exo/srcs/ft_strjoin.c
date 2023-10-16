@@ -33,6 +33,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		str[i + j] = s2[j];
 		j++;
 	}
+	str[i + j] = 0;
 	return (str);
 }
 

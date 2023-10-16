@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 21:41:45 by jtollena          #+#    #+#             */
-/*   Updated: 2023/10/15 21:41:47 by jtollena         ###   ########.fr       */
+/*   Created: 2023/10/15 21:42:50 by jtollena          #+#    #+#             */
+/*   Updated: 2023/10/15 21:42:53 by jtollena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int				i;
-	unsigned char	*copy;
+	int	i;
 
 	i = 0;
-	copy = (unsigned char *) s;
 	while (i < (int)n)
 	{
-		if (copy[i] == (unsigned char)c)
-			return (&((void *)copy)[i]);
+		if ((unsigned char) s1[i] != (unsigned char) s2[i])
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+		if ((unsigned char) s1[i] == 0 && (unsigned char) s2[i] == 0)
+			break ;
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 
 // #include <stdio.h>
 // int	main(int argc, char *argv[])
 // {
-// 	printf("%s", (char *)ft_memchr((const void *)argv[1],argv[2][0],5));
+// 	printf("%d", ft_strlen(argv[1]));
 // 	return (argc);
 // }

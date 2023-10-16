@@ -22,6 +22,8 @@ SRCS = srcs/ft_atoi.c \
 	  srcs/ft_strrchr.c \
 	  srcs/ft_tolower.c \
 	  srcs/ft_toupper.c \
+	  srcs/ft_strjoin.c \
+	  srcs/ft_strncmp.c \
 	  srcs/ft_substr.c \
 	  srcs/ft_strtrim.c \
 	  srcs/ft_split.c \
@@ -33,6 +35,16 @@ SRCS = srcs/ft_atoi.c \
 	  srcs/ft_putnbr_fd.c \
 	  srcs/ft_putendl_fd.c 
 
+BONUSSRCS = srcs/ft_lstnew.c \
+		srcs/ft_lstadd_front.c \
+		srcs/ft_lstsize.c \
+		srcs/ft_lstlast.c \
+		srcs/ft_lstadd_back.c \
+		srcs/ft_lstdelone.c \
+		srcs/ft_lstclear.c \
+		srcs/ft_lstiter.c
+
+BONUSOBJS = ${BONUSSRCS:.c=.o}
 OBJS = ${SRCS:.c=.o}
 
 all: $(NAME)
@@ -43,6 +55,12 @@ $(NAME): $(OBJS)
 $(OBJS):
 	cc -Wall -Werror -Wextra -c -I./ ${@:.o=.c} -o $@
 
+$(BONUSOBJS):
+	cc -Wall -Werror -Wextra -c -I./ ${@:.o=.c} -o $@
+
+bonus: $(BONUSOBJS) $(OBJS)
+	ar -rcs $(NAME) $(OBJS) $(BONUSOBJS)
+
 clean:
 	rm -f $(OBJS)
 
@@ -51,4 +69,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

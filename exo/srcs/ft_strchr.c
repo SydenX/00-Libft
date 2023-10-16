@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	copy = (char *) s;
 	while (*copy != 0)
 	{
-		if (*copy == c)
+		if (*copy == (char)c)
 			return (copy);
 		copy++;
 	}
-	if (*copy == c)
+	if (*copy == (char)c)
 		return (copy);
 	return (NULL);
 }
