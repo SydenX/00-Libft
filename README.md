@@ -1,6 +1,6 @@
 # Libft, First project of the 42cursus!
 
-[![Worked at least](https://wakatime.com/badge/github/SydenX/SydenX.svg)](https://wakatime.com/badge/github/SydenX/SydenX)
+[![wakatime](https://wakatime.com/badge/user/2b8474a5-a2f0-4cf0-9da2-eb7acac86d01/project/018b3495-f133-40dc-a7ef-3283f0947c1e.svg)](https://wakatime.com/badge/user/2b8474a5-a2f0-4cf0-9da2-eb7acac86d01/project/018b3495-f133-40dc-a7ef-3283f0947c1e)
 
 Description from (https://github.com/eliarisalvares)
 =======
