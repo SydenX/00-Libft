@@ -33,6 +33,20 @@ int	ft_get_words(const char *s, char c)
 	return (word);
 }
 
+void	*ft_freeall(char **ls)
+{
+	int	i;
+
+	i = 0;
+	while (ls[i] != 0)
+	{
+		free(ls[i]);
+		i++;
+	}
+	free(ls);
+	return (NULL);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**list;
@@ -41,18 +55,20 @@ char	**ft_split(const char *s, char c)
 	int		k;
 
 	list = malloc((ft_get_words(s, c) + 1) * sizeof(char *));
-	if (list == NULL)
+	if (list == NULL || s == NULL)
 		return (NULL);
 	i = 0;
 	k = 0;
 	while (k < ft_get_words(s, c))
 	{
-		while (s[i] == c)
+		while (s[i] == c && s[i] != 0)
 			i++;
 		j = i;
 		while (s[i] != c && s[i] != 0)
 			i++;
 		list[k] = ft_substr(s, j, i - j);
+		if (list[k] == NULL)
+			return (ft_freeall(list));
 		k++;
 	}
 	list[ft_get_words(s, c)] = 0;
