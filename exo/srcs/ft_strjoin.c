@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 11:08:58 by jtollena          #+#    #+#             */
+/*   Updated: 2023/10/16 11:09:00 by jtollena         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -25,9 +36,9 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	return (str);
 }
 
-#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	printf("%s", ft_strjoinr(argv[1], argv[2]));
-	return (argc);
-}
+// #include <stdio.h>
+// int	main(int argc, char *argv[])
+// {
+// 	printf("%s", ft_strjoinr(argv[1], argv[2]));
+// 	return (argc);
+// }

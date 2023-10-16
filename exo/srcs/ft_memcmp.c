@@ -27,7 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (copys1[i] - copys2[i]);
 		i++;
 	}
-	return (copys1[i] - copys2[i]);
+	return (0);
 }
 
 // #include <stdio.h>

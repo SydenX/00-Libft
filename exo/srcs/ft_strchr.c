@@ -17,11 +17,15 @@ char	*ft_strchr(const char *s, int c)
 	char	*copy;
 
 	copy = (char *) s;
-	while (*copy != c && *copy != 0)
+	while (*copy != 0)
+	{
+		if (*copy == c)
+			return (copy);
 		copy++;
-	if (*copy != c)
-		return (NULL);
-	return (copy);
+	}
+	if (*copy == c)
+		return (copy);
+	return (NULL);
 }
 
 // #include <stdio.h>

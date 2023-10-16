@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-int	ft_find(const char *src, const char *tofind)
+int	ft_find(const char *src, const char *tofind, int max)
 {
 	int	i;
 
 	i = 0;
-	while (tofind[i] == src[i])
+	while (i < max && tofind[i] == src[i] && tofind[i] != 0)
 	{
 		if ((int)ft_strlen(tofind) - 1 == i)
 			return (1);
@@ -39,7 +39,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	{
 		if (haystack[i] == needle[0])
 		{
-			if (ft_find(&haystack[i], needle) == 1)
+			if (ft_find(&haystack[i], needle, n - i) == 1)
 				return ((char *) &haystack[i]);
 		}
 		i++;

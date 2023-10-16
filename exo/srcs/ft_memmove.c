@@ -16,10 +16,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	const unsigned char	*srccpy;
 	unsigned char		*copy;
-	int					i;
 
 	copy = dst;
 	srccpy = src;
+	if (dst == NULL || src == NULL)
+		return (NULL);
 	if (dst > src)
 	{
 		while (len > 0)
@@ -29,13 +30,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
-	{
-		while (i < (int)len - 1)
-		{
-			copy[i] = srccpy[i];
-			i++;
-		}
-	}
+		ft_memcpy(dst, src, len);
 	return (dst);
 }
 

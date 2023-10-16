@@ -21,7 +21,17 @@ SRCS = srcs/ft_atoi.c \
 	  srcs/ft_strnstr.c \
 	  srcs/ft_strrchr.c \
 	  srcs/ft_tolower.c \
-	  srcs/ft_toupper.c
+	  srcs/ft_toupper.c \
+	  srcs/ft_substr.c \
+	  srcs/ft_strtrim.c \
+	  srcs/ft_split.c \
+	  srcs/ft_itoa.c \
+	  srcs/ft_strmapi.c \
+	  srcs/ft_striteri.c \
+	  srcs/ft_putchar_fd.c \
+	  srcs/ft_putstr_fd.c \
+	  srcs/ft_putnbr_fd.c \
+	  srcs/ft_putendl_fd.c 
 
 OBJS = ${SRCS:.c=.o}
 
