@@ -3,9 +3,7 @@
 ### Time worked on this project
 [![wakatime](https://wakatime.com/badge/user/2b8474a5-a2f0-4cf0-9da2-eb7acac86d01/project/018b3495-f133-40dc-a7ef-3283f0947c1e.svg)](https://wakatime.com/badge/user/2b8474a5-a2f0-4cf0-9da2-eb7acac86d01/project/018b3495-f133-40dc-a7ef-3283f0947c1e)
 
-Description from (https://github.com/eliarisalvares)
-=======
-Function descriptions from (https://github.com/eliarisalvares/libft_42sp/blob/master/)
+##### Function Description from (https://github.com/eliarisalvares)
 | function | description |
 |--|--|
 |ft_isascii|tests if a given character, in the current locale, can be represented as a valid 7–bit US-ASCII character.        
