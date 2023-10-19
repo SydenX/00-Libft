@@ -62,7 +62,7 @@ bonus: $(BONUSOBJS) $(OBJS)
 	ar -rcs $(NAME) $(OBJS) $(BONUSOBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUSOBJS)
 
 fclean: clean
 	rm -f $(NAME)
