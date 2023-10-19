@@ -1,4 +1,3 @@
-NAME = libft.a
 SRCS = ft_atoi.c \
 	  ft_bzero.c \
 	  ft_calloc.c \
@@ -34,7 +33,7 @@ SRCS = ft_atoi.c \
 	  ft_putnbr_fd.c \
 	  ft_putendl_fd.c 
 
-BONUSSRCS = ft_lstnew.c \
+BONUS_SRCS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -43,29 +42,30 @@ BONUSSRCS = ft_lstnew.c \
 		ft_lstclear.c \
 		ft_lstiter.c
 
-BONUSOBJS = ${BONUSSRCS:.c=.o}
-OBJS = ${SRCS:.c=.o}
+NAME = libft.a
+OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+INCLUDES = libft.h
+FLAGS = -Wall -Wextra -Werror
+
+.c.o:
+	gcc $(FLAGS) -I includes -c $< -o $(<:.c=.o)
+
+$(NAME): $(OBJS) $(INCLUDES)
+	ar -rcs $(NAME) $(OBJS)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+bonus: $(OBJS) $(BONUS_OBJS) $(INCLUDES)
+	ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-$(OBJS):
-	cc -Wall -Werror -Wextra -c -I ./ ${@:.o=.c} -o $@
-
-$(BONUSOBJS):
-	cc -Wall -Werror -Wextra -c -I ./ ${@:.o=.c} -o $@
-
-bonus: $(BONUSOBJS) $(OBJS)
-	ar -rcs $(NAME) $(OBJS) $(BONUSOBJS)
+re: clean fclean all
 
 clean:
-	rm -f $(OBJS) $(BONUSOBJS)
+	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
-re: fclean all
-
-.PHONY: all clean fclean re bonus
+.PHONY:
+	all clean fclean re bonus
