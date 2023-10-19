@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	copy = dst;
 	srccpy = src;
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	if (dst > src)
 	{
