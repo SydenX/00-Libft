@@ -1,5 +1,4 @@
 NAME = libft.a
-INCLUDES = libft.h
 SRCS = ft_atoi.c \
 	  ft_bzero.c \
 	  ft_calloc.c \
@@ -53,10 +52,10 @@ $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
 $(OBJS):
-	cc -Wall -Werror -Wextra -c -I./ ${@:.o=.c} -o $@
+	cc -Wall -Werror -Wextra -c -I ./ ${@:.o=.c} -o $@
 
 $(BONUSOBJS):
-	cc -Wall -Werror -Wextra -c -I./ ${@:.o=.c} -o $@
+	cc -Wall -Werror -Wextra -c -I ./ ${@:.o=.c} -o $@
 
 bonus: $(BONUSOBJS) $(OBJS)
 	ar -rcs $(NAME) $(OBJS) $(BONUSOBJS)
