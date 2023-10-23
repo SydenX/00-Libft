@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jtollena <jtollena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:09:07 by jtollena          #+#    #+#             */
-/*   Updated: 2023/10/16 11:09:09 by jtollena         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:25:38 by jtollena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ char	**ft_split(const char *s, char c)
 	int		j;
 	int		k;
 
+	if (s == NULL)
+		return (NULL);
 	list = malloc((ft_get_words(s, c) + 1) * sizeof(char *));
-	if (list == NULL || s == NULL)
+	if (list == NULL)
 		return (NULL);
 	i = 0;
 	k = 0;
@@ -67,9 +69,8 @@ char	**ft_split(const char *s, char c)
 		while (s[i] != c && s[i] != 0)
 			i++;
 		list[k] = ft_substr(s, j, i - j);
-		if (list[k] == NULL)
+		if (list[k++] == NULL)
 			return (ft_freeall(list));
-		k++;
 	}
 	list[ft_get_words(s, c)] = 0;
 	return (list);

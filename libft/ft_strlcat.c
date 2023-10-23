@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jtollena <jtollena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 21:42:36 by jtollena          #+#    #+#             */
-/*   Updated: 2023/10/15 21:42:37 by jtollena         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:10:56 by jtollena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	int	i;
 	int	dstln;
 
-	if (dst[0] == 0 && src[0] == 0)
+	if (!dst && !src)
 		return (0);
 	dstln = 0;
 	while (dst[dstln] != 0 && dstsize > (size_t)dstln)

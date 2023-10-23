@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jtollena <jtollena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 21:46:55 by jtollena          #+#    #+#             */
-/*   Updated: 2023/10/15 21:46:58 by jtollena         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:03:57 by jtollena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define MY_INT_MAX 2147483647
+# define MY_LONG_MAX 9223372036854775807
 
 # include <stdlib.h>
 # include <unistd.h>

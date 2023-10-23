@@ -3,20 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jtollena <jtollena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 21:40:44 by jtollena          #+#    #+#             */
-/*   Updated: 2023/10/15 21:40:51 by jtollena         ###   ########.fr       */
+/*   Updated: 2023/10/23 12:04:24 by jtollena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_isoverflow(unsigned long long nb, const char *str, int negation)
+{
+	if (nb >= MY_LONG_MAX / 10 && 
+		(nb > MY_LONG_MAX / 10 || str[0] - '0' > MY_LONG_MAX % 10))
+	{
+		if (negation == 1)
+			return (-1);
+		else
+			return (0);
+	}
+	return (1);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	negation;
-	int	nb;
+	int					i;
+	int					negation;
+	unsigned long long	nb;
 
 	nb = 0;
 	negation = 1;
@@ -29,6 +42,18 @@ int	ft_atoi(const char *str)
 			negation = -1;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
-		nb = (nb * 10) + (str[i++] - '0');
+	{
+		if (ft_isoverflow(nb, &str[i], negation) != 1)
+			return (ft_isoverflow(nb, &str[i], negation));
+		nb = (nb * 10) + str[i++] - '0';
+	}
 	return (nb * negation);
 }
+
+// #include <stdlib.h>
+// #include <stdio.h>
+// int	main()
+// {
+// 	printf("%d\n", atoi("-9223372036854775807"));
+// 	printf("%d", ft_atoi("-9223372036854775807"));
+// }
