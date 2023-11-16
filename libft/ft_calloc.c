@@ -6,7 +6,7 @@
 /*   By: jtollena <jtollena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 21:41:04 by jtollena          #+#    #+#             */
-/*   Updated: 2023/10/23 13:01:06 by jtollena         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:40:00 by jtollena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(mem, nmemb * size);
 	return (mem);
 }
-
-// #include <stdio.h>
-// int	main()
-// {
-// 	printf("%lu", SIZE_MAX);
-// 	calloc(SIZE_MAX*2, SIZE_MAX*2);
-// 	//ft_calloc(10, 10);
-// }
